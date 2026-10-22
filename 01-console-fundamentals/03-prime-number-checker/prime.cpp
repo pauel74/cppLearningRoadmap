@@ -15,34 +15,41 @@ bool primeNumberChecker(int zahl) {
     return isntDivisible;
 }
 
-int main() {
-
-    /*
-    cout << "here come all prime numbers:\n";
-    for(int y = 0; y<numeric_limits<streamsize>::max(); y++) {
+void showPrimeNumbers() {
+    for(int y = 0; y<101; y++) {
         if(primeNumberChecker(y)) {
             cout << y << ", ";
         }
     }
-    return 0;
-    */
+    return;
+}
+
+int main() {
 
     int inputNum;
 
-    cout << "prime number checker\nenter a number: ";
+    cout << "prime number checker\nenter an integer: ";
     cin >> inputNum;
 
     while(cin.fail()) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "invalid input! try again: ";
         cin >> inputNum;
     }
 
+    if(inputNum < 2) {
+        cout << inputNum << " is NOT a prime number, beacuse prime numbers must have two distinct factors. These are all prime numbers to 100\n";
+        showPrimeNumbers();
+        cout << '\n';
+        return 0;
+    }
+
     if(primeNumberChecker(inputNum)) {
-        cout << inputNum << " IS a prime number";
+        cout << inputNum << " IS a prime number\n";
     }
     else {
-        cout << inputNum << " is NOT a prime number";
+        cout << inputNum << " is NOT a prime number\n";
     }
 
     return 0;
