@@ -87,11 +87,21 @@ int main() {
     
     std::cout << "\n" << userValue << " ";
     indexToUnit(from);
-    std::cout << "s are equal to ";
+    if(userValue == 1) { // 1 euros -> 1 euro
+        std::cout << " is equal to ";
+    }
+    else {
+        std::cout << "s are equal to ";
+    }
     std::cout << convertUnit(from, to, userValue);
     std::cout << " ";
     indexToUnit(to);
-    std::cout << "s\n";
+    if(convertUnit(from, to, userValue) == 1) { // 1 euros -> 1 euro
+        std::cout << std::endl;
+    }
+    else {
+        std::cout << "s\n";        
+    }
 
     return 0;
 }
