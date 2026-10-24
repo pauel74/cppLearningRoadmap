@@ -38,7 +38,6 @@ float convertUnit(int from, int to, float inputMoney) {
     // 1 Euro = 1.12 USD = 0.75 GBP = 1009 KPW = 17.995 PRB
 }
 
-
 void indexToUnit(int index) {
     switch (index) {
     case 1:
